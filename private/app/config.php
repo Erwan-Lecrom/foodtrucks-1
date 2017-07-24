@@ -28,7 +28,10 @@ define("MODE", "dev"); // dev | prod
 
 // -- Directories
 define("VIEWS_DIRECTORY", "../private/views/");
-
+define("FUNCTIONS_DIRECTORY","../private/functions/");
+define("FUNCTIONS_FILES","/php$/");
+define("MODELS_DIRECTORY","../private/models/");
+define("MODELS_FILES","../private/functions/");
 
 
 // --------------------

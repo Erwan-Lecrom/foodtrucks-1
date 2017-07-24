@@ -1,9 +1,20 @@
 <?php
 include_once '../private/app/config.php';
 include_once '../private/app/routes.php';
+include_once '../private/app/autoload.php';
 
-include_once '../private/functions/flashbag.php';
+//include_once '../private/functions/flashbag.php';
+//include_once '../private/functions/token.php';
 
+
+// --------------------
+// AUTOLOADER
+// --------------------
+// Autoload des fonctions / controllers
+autoload(FUNCTIONS_DIRECTORY, FUNCTIONS_FILES);
+
+// Autoload des models
+//autoload(MODELS_DIRECTORY, MODELS_FILES);
 
 // --------------------
 // CONFIG PHP

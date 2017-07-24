@@ -13,12 +13,11 @@ $birth_year  = null;
 // Cas où l'utilisateur envoie le formulaire (méthode POST)
 // Contrôle du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+    $token=$_POST['token'];
 }
-
 // Cas où l'utilisateur arrive sur la page sans envoyer le formulaire (méthode GET)
 else {
-
+    $_SESSION['token']=getToken();
 }
 ?>
 
@@ -33,7 +32,7 @@ else {
 
         <form method="post">
 
-            <input type="text" name="token" value="<?php echo $_SESSION['token']; ?>">
+            <input type="text" name="token" class="hidden" value="<?php echo $_SESSION['token']; ?>">
 
             <div class="form-group">
                 <label for="login">Identifiant (adresse email)</label>
