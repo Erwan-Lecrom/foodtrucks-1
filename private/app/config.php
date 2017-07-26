@@ -31,11 +31,16 @@ define("VIEWS_DIRECTORY", "../private/views/");
 define("FUNCTIONS_DIRECTORY","../private/functions/");
 define("FUNCTIONS_FILES","/php$/");
 define("MODELS_DIRECTORY","../private/models/");
-define("MODELS_FILES","../private/functions/");
+define("MODELS_FILES","/php$/");
 
+define("ROLES_GLUE", ',');
 
+define("ROLE_USER", 'USER');
+define("ROLE_ADMIN", 'ADMIN');
 // --------------------
 // DEFAULT VARS
 // --------------------
 
 $default_page = "home";
+$default_lang="fr";
+$default_user_roles=[ROLE_USER];

@@ -14,7 +14,7 @@ include_once '../private/app/autoload.php';
 autoload(FUNCTIONS_DIRECTORY, FUNCTIONS_FILES);
 
 // Autoload des models
-//autoload(MODELS_DIRECTORY, MODELS_FILES);
+autoload(MODELS_DIRECTORY, MODELS_FILES);
 
 // --------------------
 // CONFIG PHP
