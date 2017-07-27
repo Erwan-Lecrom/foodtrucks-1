@@ -43,4 +43,4 @@ define("ROLE_ADMIN", 'ADMIN');
 
 $default_page = "home";
 $default_lang="fr";
-$default_user_roles=[ROLE_USER];
+$default_users_roles=[ROLE_USER];

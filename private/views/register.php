@@ -1,21 +1,23 @@
 <?php
 
 // Definition des variables par défaut
-$login       = null;
-$password    = null;
-$firstname   = null;
-$lastname    = null;
-$gender      = null;
-$birth_day   = null;
-$birth_month = null;
-$birth_year  = null;
+
 $month=["janvier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre"];
 
 // Cas où l'utilisateur envoie le formulaire (méthode POST)
 // Contrôle du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $save = true;
+    $save=true;
+    $login=null;
+    $password=null;
+    $token=null;
+    $firstname=null;
+    $lastname=null;
+    $gender=null;
+    $birth_day=null;
+    $birth_month=null;
+    $birth_year=null;
 
     // Recupérer les données de $_POST
     $token = isset($_POST['token']) ? $_POST['token'] : null;
@@ -35,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     // - Controle de l'adresse email
     // --
-    // -> ne doit pas etre vide 
+    // -> ne doit pas etre vide
     if (empty($login)){
         $save=false;
         setFlashBag("danger","veuillez saisir un identifiant");
@@ -69,7 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         setFlashBag("danger","Le mot de passe  doit contenir au moins un caractere speciale (#@!=+-_)");
     }
     // On Crypte le Mot de passe
-
+    else {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+    }
     // - Controle du prénom
     // --
     // -> doit être une chaine alphabetique
